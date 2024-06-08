@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import CategoryNews from '../CategoryNews/CategoryNews';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const News = () => {
     const navigation = useNavigation();

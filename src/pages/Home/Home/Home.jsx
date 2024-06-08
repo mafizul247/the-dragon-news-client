@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const Home = () => {
     const navigation = useNavigation();

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigation } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const LeftNav = () => {
     const navigation = useNavigation();
