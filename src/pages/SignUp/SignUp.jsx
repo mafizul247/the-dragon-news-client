@@ -3,14 +3,15 @@ import NavBar from '../Shared/NavBar/NavBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
     const [accepted, setAccepted] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
-
     const from = location.state?.from?.pathname || '/';
+    useTitle('Sign Up');
 
     const handgleRegister = (event) => {
         event.preventDefault();

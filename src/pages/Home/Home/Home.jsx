@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
+import useTitle from '../../../hooks/useTitle';
 
 const Home = () => {
     const navigation = useNavigation();
@@ -9,6 +10,7 @@ const Home = () => {
         return <LoadingSpinner />
     }
 
+    useTitle('Home');
     const categoryNews = useLoaderData();
     return (
         <div>

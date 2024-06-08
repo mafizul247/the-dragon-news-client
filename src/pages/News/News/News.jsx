@@ -3,6 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import CategoryNews from '../CategoryNews/CategoryNews';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
+import useTitle from '../../../hooks/useTitle';
 
 const News = () => {
     const navigation = useNavigation();
@@ -13,6 +14,7 @@ const News = () => {
     const DetailsNews = useLoaderData()
     const [categoryNews, setCategoryNews] = useState([])
     const { _id, title, thumbnail_url, details, category_id } = DetailsNews;
+    useTitle(title)
 
     useEffect(() => {
         fetch(`https://the-news-dragon-server-chi-lemon.vercel.app/category/${category_id}`)

@@ -27,9 +27,9 @@ const NavBar = () => {
                         <li className="nav-item">
                             <NavLink to='/about' className="nav-link active">About </NavLink>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink to='/career' className="nav-link active">Career </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                     <form className="d-flex gap-2" role="search">
                         {
