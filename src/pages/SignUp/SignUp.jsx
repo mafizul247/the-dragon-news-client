@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import NavBar from '../Shared/NavBar/NavBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -34,6 +35,11 @@ const SignUp = () => {
             })
     }
 
+    const handleAccepted = (event) => {
+        const checked = event.target.checked
+        setAccepted(!accepted);
+    }
+
     return (
         <div className='container'>
             <NavBar />
@@ -57,10 +63,10 @@ const SignUp = () => {
                         <input type="password" className="form-control" name='password' placeholder='Entry your password' />
                     </div>
                     <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" for="exampleCheck1">Check me out</label>
+                        <input onClick={handleAccepted} type="checkbox" className="form-check-input" id="exampleCheck1" />
+                        <label className="form-check-label" for="exampleCheck1">Accept Trems & Conditions </label>
                     </div>
-                    <input type="submit" className="btn btn-primary w-100" value="Sign Up" />
+                    <input type="submit" className="btn btn-primary w-100" value="Sign Up" disabled={accepted} />
                 </form>
                 <div>
                     <p className='mt-2 text-center'>Alreay have an account? <Link to='/login' className='text-decoration-none' >Please Login!</Link> </p>
