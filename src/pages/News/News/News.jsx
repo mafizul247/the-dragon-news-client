@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import CategoryNews from '../CategoryNews/CategoryNews';
 
 const News = () => {
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') {
+        return <LoadingSpinner />
+    }
+
     const DetailsNews = useLoaderData()
     const [categoryNews, setCategoryNews] = useState([])
     const { _id, title, thumbnail_url, details, category_id } = DetailsNews;

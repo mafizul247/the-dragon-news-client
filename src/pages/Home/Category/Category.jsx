@@ -1,8 +1,14 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const Category = () => {
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') {
+        return <LoadingSpinner />
+    }
+    
     const {id } = useParams();
     const categoryNews = useLoaderData();
     return (

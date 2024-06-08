@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigation } from 'react-router-dom';
 
 const LeftNav = () => {
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') {
+        return <LoadingSpinner />
+    }
+
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {

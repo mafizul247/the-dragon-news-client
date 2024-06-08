@@ -1,8 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import NewsCard from '../NewsCard/NewsCard';
 
 const Home = () => {
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') {
+        return <LoadingSpinner />
+    }
+
     const categoryNews = useLoaderData();
     return (
         <div>
