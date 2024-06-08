@@ -18,12 +18,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/category/0')
+                loader: () => fetch('https://the-news-dragon-server-chi-lemon.vercel.app/category/0')
             },
             {
                 path: 'category/:id',
                 element: <Category />,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-news-dragon-server-chi-lemon.vercel.app/category/${params.id}`)
             },
             {
                 path: 'about',
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <News />,
-                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-news-dragon-server-chi-lemon.vercel.app/news/${params.id}`)
             }
         ]
     },

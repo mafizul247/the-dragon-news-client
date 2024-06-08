@@ -9,7 +9,7 @@ const News = () => {
     const { _id, title, thumbnail_url, details, category_id } = DetailsNews;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/category/${category_id}`)
+        fetch(`https://the-news-dragon-server-chi-lemon.vercel.app/category/${category_id}`)
             .then(res => res.json())
             .then(data => {
                 setCategoryNews(data);
