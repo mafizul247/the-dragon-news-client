@@ -2,15 +2,12 @@ import React from 'react';
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import QZone from '../QZone/QZone';
 import image from './../../../assets/bg1.png'
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const RightNav = () => {
     return (
         <div>
-            <div className='mb-3'>
-                <h4>Login With</h4>
-                <button className="btn btn-outline-primary mb-2 w-100"><FaGoogle /> Login With Google</button>
-                <button className="btn btn-outline-primary mb-2 w-100"><FaGithub />  Login With GitHub</button>
-            </div>
+            <SocialLogin />
             <div className="mb-3">
                 <h4>Find Us On</h4>
                 <ul class="list-group">
